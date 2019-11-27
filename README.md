@@ -4,3 +4,9 @@ Moteur de recherche de molécules chimiques permettant, à partird’une combina
 ## Capture
 ![screenshot](screenshot/screenshot.png)
 
+## langages et outils utilisés
+- html, css, javascript
+- vuejs, vue-cli, vuex
+- semantic ui
+- nodejs
+- sqlite
