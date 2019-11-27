@@ -11,7 +11,7 @@ app.use(bodyParser.json({ limit: '1000MB', parameterLimit: 1000000 }));
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json());
 
-db.connect('db/test.db');
+db.connect('db/sqlite.db');
 
 db.run("CREATE TABLE IF NOT EXISTS Fragments (name TEXT, source TEXT, result TEXT, UNIQUE(name, source));")
 
