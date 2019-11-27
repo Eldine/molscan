@@ -11,4 +11,4 @@ Moteur de recherche de molécules chimiques permettant, à partird’une combina
 - sqlite
 - semantic ui
 ## Auteur
-- Abdou Abdoul-Hafarou
+Abdou Abdoul-Hafarou
