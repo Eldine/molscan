@@ -5,8 +5,10 @@ Moteur de recherche de molécules chimiques permettant, à partird’une combina
 ![screenshot](screenshot/screenshot.png)
 
 ## langages et outils utilisés
-- html, css, javascript
+- html, css, js
 - vuejs, vue-cli, vuex
-- semantic ui
 - nodejs
 - sqlite
+- semantic ui
+## Auteur
+- Abdou Abdoul-Hafarou
