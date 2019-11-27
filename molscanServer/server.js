@@ -15,16 +15,6 @@ db.connect('db/sqlite.db');
 
 db.run("CREATE TABLE IF NOT EXISTS Fragments (name TEXT, source TEXT, result TEXT, UNIQUE(name, source));")
 
-// let name = 'ch3bv2'
-// let source = "pubchem"
-// let result = "123,4,5,6,8,7"
-// db.run("INSERT OR IGNORE into Fragments VALUES ('" + name + "','" + source + "','" + result + "')");
-// db.run("INSERT OR IGNORE into Fragments VALUES ('Fazil','chembl','1,56,96')");
-
-// var rows = db.run("SELECT name FROM Fragments");
-// console.log(rows);
-// console.log('okok')
-
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -62,11 +52,8 @@ app.get('/add/:db/:frag/:res', async (req, res) => {
     let source = req.params.db
     let result = req.params.res
     db.run("INSERT OR IGNORE into Fragments VALUES ('" + name + "','" + source + "','" + result + "')");
-
     let query = "SELECT * FROM Fragments WHERE name = '" + name + "' AND source = '" + source + "'"
-
     console.log('add ' + req.params.frag + ' from ' + req.params.db)
-
     var rows = db.run(query);
     console.log(rows);
     res.send(rows)
@@ -80,13 +67,9 @@ app.post('/add', async (req, res) => {
   let source = req.body.db
   let result = req.body.res
   if (source === 'pubchem' || source === 'chembl') {
-
     db.run("INSERT OR IGNORE into Fragments VALUES ('" + name + "','" + source + "','" + result + "')");
-
     let query = "SELECT * FROM Fragments WHERE name = '" + name + "' AND source = '" + source + "'"
-
     console.log('add ' + name + ' from ' + source)
-
     var rows = db.run(query);
     console.log(rows);
     res.send(rows)
@@ -96,14 +79,12 @@ app.post('/add', async (req, res) => {
 
 app.get('/match/:dbs/:frags', async (req, res) => {
   let molBis = {}
-
   // on le cree 2 fois sinon le serveur plente lorque les 2 bases sont requetée
   let molBis2 = {}
   let dbs = req.params.dbs.split(',')
   let frags = req.params.frags.split(',')
   console.log(dbs)
   console.log(frags)
-
   for (let name of frags) {
     if (dbs.includes('pubchem')) {
       let query = "SELECT * FROM Fragments WHERE name = '" + name + "' AND source = 'pubchem'"
