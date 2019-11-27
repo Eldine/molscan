@@ -1,4 +1,4 @@
-# emolecule
+# Molscan Server
 
 > api rest
 
