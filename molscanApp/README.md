@@ -1,6 +1,6 @@
-# emolecule
+# molscan
 
-> moteur de recherche pour molécule
+> moteur de recherche de molécule chimique
 
 ## Build Setup
 
